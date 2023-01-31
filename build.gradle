@@ -1,0 +1,39 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.8'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.anupam.camel'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.apache.camel.springboot:camel-spring-boot-starter:3.20.1'
+	// https://mvnrepository.com/artifact/org.apache.camel/camel-rest
+	//implementation group: 'org.apache.camel', name: 'camel-rest', version: '3.20.1'
+	// https://mvnrepository.com/artifact/org.apache.camel/camel-http
+	//implementation group: 'org.apache.camel', name: 'camel-http', version: '3.20.1'
+	// https://mvnrepository.com/artifact/org.apache.camel/camel-core
+	//implementation group: 'org.apache.camel', name: 'camel-core', version: '3.20.1'
+	// https://mvnrepository.com/artifact/org.apache.camel.springboot/camel-servlet-starter
+	implementation group: 'org.apache.camel.springboot', name: 'camel-servlet-starter', version: '3.20.1'
+	// https://mvnrepository.com/artifact/org.apache.camel/camel-jackson
+	implementation group: 'org.apache.camel', name: 'camel-jackson', version: '3.20.1'
+
+
+	implementation 'org.projectlombok:lombok:1.18.22'
+
+
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
